@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Fineract Integration · Virtual SACCO{% endblock %}
+{% block content %}
+<section class="page-header">
+  <div><p class="eyebrow">PLATFORM INTEGRATIONS</p><h1>Apache Fineract</h1><p class="muted">Read-only connectivity check for the financial engine.</p></div>
+  <a class="btn btn-secondary" href="{{ url_for('admin') }}">Back to Admin</a>
+</section>
+<section class="stats-grid">
+  <article class="stat-card"><span class="stat-label">Connection status</span><strong>{{ 'Connected' if health.ok else 'Not connected' }}</strong><span class="muted">{{ health.message }}</span></article>
+  <article class="stat-card"><span class="stat-label">Tenant</span><strong>Configured by environment</strong><span class="muted">Tenant identifier is not displayed here.</span></article>
+  <article class="stat-card"><span class="stat-label">Loan products</span><strong>{{ products|length if health.ok and not product_error else '—' }}</strong><span class="muted">Loaded from Fineract when available.</span></article>
+</section>
+{% if product_error %}<div class="alert alert-warning">Could not load loan products: {{ product_error }}</div>{% endif %}
+<section class="panel">
+  <div class="panel-heading"><div><h2>Loan products</h2><p class="muted">Read from Fineract; no financial changes are made by this page.</p></div></div>
+  {% if products %}
+  <div class="table-wrap"><table><thead><tr><th>Product</th><th>Product ID</th><th>Currency</th><th>Interest rate</th></tr></thead><tbody>
+  {% for product in products %}<tr><td>{{ product.name or 'Unnamed product' }}</td><td>{{ product.id or '—' }}</td><td>{{ product.currency.code if product.currency else '—' }}</td><td>{{ product.interestRatePerPeriod if product.interestRatePerPeriod is defined else '—' }}</td></tr>{% endfor %}
+  </tbody></table></div>
+  {% elif health.ok %}<p>No loan products were returned. Configure and validate loan products in Fineract before enabling lending workflows.</p>
+  {% else %}<p>Start and configure Apache Fineract, then set the connection variables in your environment. This page does not rely on local application records as a fallback.</p>{% endif %}
+</section>
+<section class="panel"><h2>Integration boundary</h2><p>This read-only integration layer is designed to validate connectivity and configuration before any write workflows are enabled. The local application continues to manage member and loan data in its current workflow until member identity mapping, loan product configuration, write permissions, reconciliation, and accounting controls are fully implemented and reviewed.</p></section>
+{% endblock %}

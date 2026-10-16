@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block title %}Page not found{% endblock %}{% block content %}<section class="auth-section"><div class="auth-card text-center"><div class="auth-symbol">M</div><h1>Oops, a wrong turn.</h1><p class="auth-subtitle">{{ message }}</p><a class="btn btn-primary-dark rounded-pill px-4" href="{{ url_for('index') }}">Back home →</a></div></section>{% endblock %}

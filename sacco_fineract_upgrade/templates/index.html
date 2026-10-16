@@ -1,0 +1,20 @@
+{% extends "base.html" %}{% block title %}Mwangaza SACCO | Grow together{% endblock %}
+{% block content %}
+<section class="hero-section"><div class="container"><div class="row align-items-center g-5">
+ <div class="col-lg-6"><div class="eyebrow"><span class="pulse"></span> YOUR MONEY. YOUR FUTURE.</div>
+  <h1>Small steps.<br><span class="text-lime">Brighter futures.</span></h1>
+  <p class="hero-copy">A modern virtual SACCO built to make saving feel simple, transparent and rewarding. Build a habit, track your progress and explore responsible borrowing — all in one place.</p>
+  <div class="d-flex flex-wrap gap-3 mt-4"><a class="btn btn-lime btn-lg rounded-pill px-4" href="{{ url_for('register') }}">Start your journey <span>↗</span></a><a class="btn btn-ghost btn-lg rounded-pill px-4" href="#how">Explore the platform</a></div>
+  <div class="hero-proof mt-5"><div class="avatar-stack"><span>E</span><span>J</span><span>A</span></div><div><strong>Built around your goals</strong><small>Clear records. Convenient access. Member-first.</small></div></div>
+ </div>
+ <div class="col-lg-6"><div class="visual-wrap"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+  <div class="balance-card"><div class="d-flex justify-content-between align-items-center"><span class="mini-label">MEMBER OVERVIEW</span><span class="status-pill">● ACTIVE</span></div><p class="balance-label mt-4">Your savings journey</p><div class="balance-amount">KSh 24,850<span>.00</span></div><div class="d-flex justify-content-between mt-4"><span class="muted">Illustrative balance</span><span class="positive">↗ Growing steadily</span></div><div class="progress mt-3"><div class="progress-bar" style="width:68%"></div></div><div class="d-flex justify-content-between mt-2"><small class="muted">Monthly goal</small><small>68% reached</small></div><div class="card-divider"></div><div class="d-flex justify-content-between align-items-center"><div><small class="muted d-block">Savings habit</small><strong>One step at a time</strong></div><div class="round-icon">↗</div></div></div>
+  <div class="floating-note note-top"><span class="note-icon">✓</span><div><strong>Clear records</strong><small>Every entry in one place</small></div></div>
+  <div class="floating-note note-bottom"><span class="note-icon note-dark">↗</span><div><strong>Goal focused</strong><small>Progress you can see</small></div></div>
+ </div></div></div></section>
+<section class="trust-strip"><div class="container d-flex flex-wrap justify-content-center justify-content-md-between gap-3"><span>✳ Member-first experience</span><span>⌁ Simple savings ledger</span><span>◈ Transparent loan tracking</span><span>↗ Accessible anywhere</span></div></section>
+<section id="how" class="section-pad"><div class="container"><div class="section-heading text-center"><div class="eyebrow dark-eyebrow">HOW IT WORKS</div><h2>Financial progress, made practical.</h2><p>Useful tools for everyday members — without the paperwork maze.</p></div>
+ <div class="row g-4 mt-3"><div class="col-md-4"><div class="feature-card"><div class="feature-number">01</div><div class="feature-icon">◎</div><h3>Create your account</h3><p>Join online and access your own member dashboard securely.</p></div></div><div class="col-md-4"><div class="feature-card"><div class="feature-number">02</div><div class="feature-icon">↗</div><h3>Build your savings</h3><p>Record deposits, review your balance and keep track of activity.</p></div></div><div class="col-md-4"><div class="feature-card"><div class="feature-number">03</div><div class="feature-icon">◇</div><h3>Plan with confidence</h3><p>Submit loan requests and follow their status in one place.</p></div></div></div>
+</div></section>
+<section class="cta-section"><div class="container"><div class="cta-panel"><div><div class="eyebrow">YOUR NEXT CHAPTER</div><h2>Make room for what’s possible.</h2><p>Start with one simple step toward your financial goals.</p></div><a class="btn btn-lime btn-lg rounded-pill px-4" href="{{ url_for('register') }}">Create free account ↗</a></div></div></section>
+{% endblock %}
