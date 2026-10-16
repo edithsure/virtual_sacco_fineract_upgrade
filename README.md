@@ -2,6 +2,29 @@
 
 This project is a Flask-based SACCO member portal and accounting workflow application. It includes member registration, savings and withdrawal tracking, loan applications, admin review, and a basic accounting ledger with simulated M-Pesa-style payment reconciliation.
 
+## How David can access the project
+
+David can work on the same project by cloning the GitHub repository:
+
+```powershell
+git clone https://github.com/edithsure/virtual_sacco_fineract_upgrade.git
+cd .\virtual_sacco_fineract_upgrade
+```
+
+After cloning, he can run the setup helper:
+
+```powershell
+.\setup_project.ps1
+```
+
+Then start the app:
+
+```powershell
+.\start_app.ps1
+```
+
+This repository is already connected to the GitHub remote and the main branch is tracked as `origin/main`.
+
 ## Repository layout
 
 - `sacco_fineract_upgrade/` — application code
